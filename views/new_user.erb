@@ -1,0 +1,12 @@
+<form method="POST" action="/users">
+  <input type="text" name="username" placeholder="username">
+  <input type="text" name="password" placeholder="password">
+  <input type="submit" value="Sign in!">
+</form>
+
+<%if @username%>
+  <p> Your Username:<%=@username%></p>
+  <p> Your Password:<%=@password%></p>
+<% else%>
+  <p>Please enter a new username and password</p>
+<% end %>

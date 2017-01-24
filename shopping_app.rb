@@ -3,7 +3,7 @@ require 'sinatra/reloader'
 
 # Practice with Query String Params
 
-get '/' do
+get '/' do#"Exercise 1: added '?name=Andy' with success"
   @name = params["name"]
 
   erb :index
@@ -16,9 +16,23 @@ get '/items/new' do
 end
 
 post '/items' do
+  @item = params['item']
+  @price = params['price']
   erb :cart
 end
 
 get '/users/new' do
+  erb :new_user
+end
+
+get '/cart' do #Exercise 2 URL: http://localhost:4567/cart?item=sushi&price=8.95
+  @item = params['item']
+  @price = params['price']
+  erb :cart
+end
+
+post '/users' do
+  @username = params['username']
+  @password = params['password']
   erb :new_user
 end
